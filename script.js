@@ -65,3 +65,26 @@ const reduce = function(nums, fn, init) {
 
 const numResult = reduce(nums, (acc, curr) => acc + curr, 0);
 console.log(numResult); // Output: 10
+
+    //Challenge 4
+
+//Given an integer array arr and a filtering function fn, return a new array with a fewer or equal number of elements.
+//The returned array should only contain elements where fn(arr[i], i) evaluated to a truthy value.
+
+function filter(arr, fn) {
+    const result = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (fn(arr[i], i)) {
+        result.push(arr[i]);
+      }
+    }
+    return result;
+  }
+  
+  const arr = [0, 10, 20, 30];
+  const fn = function greaterThan10(n) {
+    return n > 10;
+  };
+  
+  const filteredArray = filter(arr, fn);
+  console.log(filteredArray); // Output: [20, 30]
