@@ -64,4 +64,4 @@ const reduce = function(nums, fn, init) {
 };
 
 const numResult = reduce(nums, (acc, curr) => acc + curr, 0);
-console.log(result); // Output: 10
+console.log(numResult); // Output: 10
