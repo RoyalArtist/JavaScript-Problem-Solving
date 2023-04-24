@@ -45,3 +45,23 @@ console.log(result(candies, extraCandies))
     console.log(counter()) // 5
     console.log(counter()) // 6
     console.log(counter()) // 7
+
+
+    //Challenge 3
+
+// Given an integer array nums, a reducer function fn, and an initial value init, return a reduced array.
+
+//A reduced array is created by applying the following operation: val = fn(init, nums[0]), val = fn(val, nums[1]), val = fn(val, nums[2]), ... until every element in the array has been processed. The final value of val is returned.
+//If the length of the array is 0, it should return init.
+
+const nums = [1, 2, 3, 4];
+
+const reduce = function(nums, fn, init) {
+  if (nums.length) {
+    nums.forEach(num => init = fn(init, num));
+  }
+  return init;
+};
+
+const numResult = reduce(nums, (acc, curr) => acc + curr, 0);
+console.log(result); // Output: 10
