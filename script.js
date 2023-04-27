@@ -88,3 +88,27 @@ function filter(arr, fn) {
   
   const filteredArray = filter(arr, fn);
   console.log(filteredArray); // Output: [20, 30]
+
+    //Challenge 5
+
+//Write a generator function that returns a generator object which yields the fibonacci sequence.
+//The fibonacci sequence is defined by the relation Xn = Xn-1 + Xn-2.
+//The first few numbers of the series are 0, 1, 1, 2, 3, 5, 8, 13.
+
+
+function* fibonacci() {
+  let [prev, curr] = [0, 1]
+  while(true) {
+    yield prev;
+    [prev, curr] = [curr, prev + curr]
+  }
+}
+
+//This generator function uses destructuring to initialize the variables prev and curr to the first two numbers of the Fibonacci sequence (0 and 1).
+//It then enters an infinite loop and yields the current value of prev on each iteration.
+//After yielding the value of prev, it updates the values of prev and curr to the next two numbers of the Fibonacci sequence
+
+const gen = fibonacci()
+for(let i = 0; i < 10; i++) {
+  console.log(ge.netx().value)
+}
